@@ -23,6 +23,7 @@ public class GlobalControllerAdvice {
     // 특정 컨트롤러에 예외 지정은 ExceptionHandler , 전체 컨트롤러는 RestControllerAdvice 또는 ControllerAdvice 로 지정가능함
     @ExceptionHandler(value = MethodArgumentNotValidException.class)
     public ResponseEntity methodArgumentNotValidException(MethodArgumentNotValidException e){
+        System.out.println("~~~~~~~~global");
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
     }
 }
